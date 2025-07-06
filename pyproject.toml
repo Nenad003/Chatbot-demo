@@ -1,0 +1,27 @@
+[project]
+name = "nenad-portfolio-v5"
+version = "0.1.0"
+description = "Nenad Mahesh Gowda's Portfolio Website with AI Chatbot"
+authors = [
+    {name = "Nenad Mahesh Gowda", email = "nenadgowda@gmail.com"}
+]
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.52.2",
+    "chatbot>=1.5.2b0",
+    "email-validator>=2.2.0",
+    "flask>=3.1.1",
+    "flask-sqlalchemy>=3.1.1",
+    "gunicorn>=23.0.0",
+    "psycopg2-binary>=2.9.10",
+    "werkzeug>=3.1.3",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+start = "gunicorn app:app --bind 0.0.0.0:$PORT"
+dev = "flask run --host=0.0.0.0 --port=5000 --reload"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
