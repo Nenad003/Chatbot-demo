@@ -35,7 +35,8 @@ class ModernChatBot {
         // Suggested questions
         this.suggestedButtons.forEach(button => {
             button.addEventListener('click', () => {
-                const question = button.textContent.trim().replace(/^.*?\s/, ''); // Remove icon
+                // Get the full text content and remove any leading/trailing whitespace
+                const question = button.textContent.trim();
                 this.chatInput.value = question;
                 this.sendMessage();
             });
